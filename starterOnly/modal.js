@@ -77,42 +77,35 @@ submit.addEventListener("click", validate);
 function validate(){
   let close = true;
   if (first.value.length < 2 ) {
-    window.alert("first pas bon");
     firstError.innerText = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     first.style.border = "#e54858 solid 2px";
     close = false;
   }
   if (last.value.length < 2 ) {
-    window.alert("last pas bon");
     lastError.innerText = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     last.style.border = "#e54858 solid 2px";
     close = false;
   }
   if (!(regexEmail.test(email.value))) {
-    window.alert("email pas bon");
     emailError.innerText = "Vous devez entrer un email valide.";
     email.style.border = "#e54858 solid 2px";
     close = false;
   }  
-  if (!(regexBirthdate.test(birthdate.value))) {
-    window.alert("birthdate pas bon");  
+  if (!(regexBirthdate.test(birthdate.value))) { 
     birthdateError.innerText = "Vous devez entrer votre date de naissance.";
     birthdate.style.border = "#e54858 solid 2px";
     close = false;
   }
   if (!(regexQuantity.test(quantity.value))) {
-    window.alert("quantity pas bon");
     quantityError.innerText = "Veuillez entrer un nombre entre 0 et 99.";
     quantity.style.border = "#e54858 solid 2px";
     close = false;
   }
   if (!(location1.checked || location2.checked || location3.checked || location4.checked || location5.checked || location6.checked)) {
-    window.alert("location pas bon");
     locationError.innerText = "Vous devez choisir une option.";
     close = false;
   }
   if (!(checkbox1.checked)) {
-    window.alert("conditions pas bon");
     checkbox1Error.innerText = "Vous devez vérifier que vous acceptez les termes et conditions.";
     close = false;
   }
