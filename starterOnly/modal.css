@@ -220,12 +220,6 @@ input {
   opacity: 0;
   transition: 0.3s;
 }
-.formData[data-error-visible="true"]::after {
-  opacity: 1;
-}
-.formData[data-error-visible="true"] .text-control {
-  border: 2px solid #e54858;
-}
 /* 
 input[data-error]::after {
     content: attr(data-error);
@@ -515,6 +509,29 @@ footer {
     margin-top: 50px;
     text-align: center;
   }
+}
+
+.error {
+  color: #e54858;
+  font-size: 0.7rem;
+  font-weight: normal;
+}
+
+.thanks-body {
+  padding-top: 150px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+#thanksClose2 {
+  width: 100px;
+  display: flex;
+  justify-content: center;
 }
 
 @keyframes modalopen {

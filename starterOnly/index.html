@@ -40,7 +40,7 @@
             Vous aimez jouer ? Notre prochain évènement gaming est ouvert
             aux réservations... Places limitées !
           </p>
-          <button class="btn-signup modal-btn">
+          <button class="btn-signup modal-btn" id="modalBtn">
             je m'inscris
           </button>
         </div>
@@ -52,9 +52,9 @@
         </button>
       </div>
 
-      <div class="bground">
+      <div class="bground" id="modal">
         <div class="content">
-          <span class="close"></span>
+          <span class="close" id="closeModal"></span>
           <div class="modal-body">
             <form
               name="reserve"
@@ -71,6 +71,7 @@
                   name="first"
                 /><br>
               </div>
+              <span class="error" id="firstError"></span>
               <div
                 class="formData">
                 <label for="last">Nom</label><br>
@@ -81,6 +82,7 @@
                   name="last"
                 /><br>
               </div>
+              <span class="error" id="lastError"></span>
               <div
                 class="formData">
                 <label for="email">E-mail</label><br>
@@ -91,6 +93,7 @@
                   name="email"
                 /><br>
               </div>
+              <span class="error" id="emailError"></span>
               <div
                 class="formData">
                 <label for="birthdate">Date de naissance</label><br>
@@ -101,11 +104,13 @@
                   name="birthdate"
                 /><br>
               </div>
+              <span class="error" id="birthdateError"></span>
               <div
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
               </div>
+              <span class="error" id="quantityError"></span>
               <p class="text-label">Quelles villes ?</p>
               <div
                 class="formData">
@@ -176,6 +181,7 @@
                   Portland</label
                 >
               </div>
+              <span class="error" id="locationError"></span>
               <div
                 class="formData">
                 <input
@@ -196,6 +202,7 @@
                 </label>
                 <br>
               </div>
+              <span class="error" id="checkbox1Error"></span>
               <input
                 class="btn-submit"
                 type="button"
@@ -206,6 +213,17 @@
             </form>
           </div>
         </div>
+      </div>
+      <div class="bground" id="thanks">
+        <div class="content">
+          <span class="close" id="thanksClose1"></span>
+          <div class="modal-body thanks-body">
+            <span>Thank you for submitting your registration details</span>
+            <div class="button" id="thanksClose2">
+              <span>Close</span>
+            </divyle=>
+          </div>
+        </div> 
       </div>
     </main>
     <footer>
