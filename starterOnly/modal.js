@@ -31,6 +31,7 @@ const location4 = document.getElementById("location4");
 const location5 = document.getElementById("location5");
 const location6 = document.getElementById("location6");
 const checkbox1 = document.getElementById("checkbox1");
+const checkbox2 = document.getElementById("checkbox2");
 const firstError = document.getElementById("firstError");
 const lastError = document.getElementById("lastError");
 const emailError = document.getElementById("emailError");
@@ -110,6 +111,18 @@ function validate(){
     close = false;
   }
   if (close == true) {
+    first.value = "";
+    last.value = "";
+    email.value = "";
+    birthdate.value = "";
+    quantity.value = "";
+    location1.checked = false;
+    location2.checked = false;
+    location3.checked = false;
+    location4.checked = false;
+    location5.checked = false;
+    location6.checked = false;
+    checkbox2.checked = false;
     closeModal();
     launchThanks();
   }
