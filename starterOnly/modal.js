@@ -8,12 +8,13 @@ function editNav() {
 }
 // Regex
 const regexEmail = /^[0-9a-zA-Z-._]{1,64}@[a-zA-Z0-9]{1,64}.[a-z]{1,64}$/;
-const regexBirthdate = /^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/;
-const regexQuantity = /^[0-9]{1,2}$/;
+const regexFormatDate = /^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/;
+const regexNumber = /^[0-9]{1,2}$/;
 
 // DOM Elements
 const modal = document.getElementById("modal");
 const modalBtn = document.getElementById("modalBtn");
+const modalBtnMobile = document.getElementById("modalBtnMobile");
 const modalClose = document.getElementById("closeModal");
 const thanks = document.getElementById("thanks");
 const thanksClose1 = document.getElementById("thanksClose1");
@@ -43,6 +44,7 @@ const checkbox1Error = document.getElementById("checkbox1Error");
 
 // launch modal event
 modalBtn.addEventListener("click", launchModal);
+modalBtnMobile.addEventListener("click", launchModal);
 
 // launch modal function
 function launchModal() {
@@ -92,12 +94,12 @@ function validate(){
     email.style.border = "#e54858 solid 2px";
     close = false;
   }  
-  if (!(regexBirthdate.test(birthdate.value))) { 
+  if (!(regexFormatDate.test(birthdate.value))) { 
     birthdateError.innerText = "Vous devez entrer votre date de naissance.";
     birthdate.style.border = "#e54858 solid 2px";
     close = false;
   }
-  if (!(regexQuantity.test(quantity.value))) {
+  if (!(regexNumber.test(quantity.value))) {
     quantityError.innerText = "Veuillez entrer un nombre entre 0 et 99.";
     quantity.style.border = "#e54858 solid 2px";
     close = false;
@@ -110,7 +112,7 @@ function validate(){
     checkbox1Error.innerText = "Vous devez vérifier que vous acceptez les termes et conditions.";
     close = false;
   }
-  if (close == true) {
+  if (close) {
     first.value = "";
     last.value = "";
     email.value = "";
@@ -142,36 +144,42 @@ location5.addEventListener("input", locationReset);
 location6.addEventListener("input", locationReset);
 checkbox1.addEventListener("input", checkbox1Reset);
 
-//reset functions
+//reset first
 function firstReset() {
   firstError.innerText = "";
   first.style.border = "none";
 }
 
+//reset last
 function lastReset() {
   lastError.innerText = "";
   last.style.border = "none";
 }
 
+//reset email
 function emailReset() {
   emailError.innerText = "";
   email.style.border = "none";
 }
 
+//reset birthdate
 function birthdateReset() {
   birthdateError.innerText = "";
   birthdate.style.border = "none";
 }
 
+//reset quantity
 function quantityReset() {
   quantityError.innerText = "";
   quantity.style.border = "none";
 }
 
+//reset location
 function locationReset() {
   locationError.innerText = "";
 }
 
+//reset checkbox1
 function checkbox1Reset() {
   checkbox1Error.innerText = "";
 }
