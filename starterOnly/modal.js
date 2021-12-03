@@ -6,7 +6,9 @@ function editNav() {
     x.className = "topnav";
   }
 }
+
 // Regex
+const regexname = /^[a-zA-Z ,'.-]{2,}$/;
 const regexEmail = /^[0-9a-zA-Z-._]{1,64}@[a-zA-Z0-9]{1,64}.[a-z]{1,64}$/;
 const regexFormatDate = /^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/;
 const regexNumber = /^[0-9]{1,2}$/;
@@ -40,7 +42,6 @@ const birthdateError = document.getElementById("birthdateError");
 const quantityError = document.getElementById("quantityError");
 const locationError = document.getElementById("locationError");
 const checkbox1Error = document.getElementById("checkbox1Error");
-
 
 // launch modal event
 modalBtn.addEventListener("click", launchModal);
@@ -79,12 +80,12 @@ submit.addEventListener("click", validate);
 //submit function
 function validate(){
   let close = true;
-  if (first.value.length < 2 ) {
+  if (!(regexname.test(first.value.trim()))) {
     firstError.innerText = "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     first.style.border = "#e54858 solid 2px";
     close = false;
   }
-  if (last.value.length < 2 ) {
+  if (!(regexname.test(last.value.trim()))) {
     lastError.innerText = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     last.style.border = "#e54858 solid 2px";
     close = false;
